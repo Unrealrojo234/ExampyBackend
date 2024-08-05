@@ -25,15 +25,6 @@ app.post('/mock',async(req,res)=>{
 })
 
 
-//Serving static assets
-app.use('/html',(req,res)=>{
-    res.sendFile(__dirname + '/views/index.html')
-})
-
-//serving public assets
-app.use('/',(req,res)=>{
-    res.sendFile(__dirname + '/public/styles.css')
-})              
 
 
 app.listen(3000,()=>{
