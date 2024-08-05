@@ -24,7 +24,9 @@ app.post('/mock',async(req,res)=>{
     }
 })
 
-
+app.get('/',(req,res)=>{
+    res.send("<h1>Hello Exampy Backend</h1>")
+})
 
 
 app.listen(3000,()=>{
