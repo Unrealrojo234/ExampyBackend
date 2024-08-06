@@ -24,6 +24,19 @@ app.post('/mock',async(req,res)=>{
     }
 })
 
+//Getting data from the database
+app.get('/mock', async(req,res)=>{
+    try{
+        const mock = await Mock.find({});
+        res.status(200).json(mock);
+
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
+
+
 app.get('/',(req,res)=>{
     res.send("<h1>Hello Exampy Backend</h1>")
 })
