@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 
 const dataBase = process.env.DATABASE_STRING;
 
 app.use(express.json());
-
+app.use(cors());
 //imorting models
 const Mock = require('./models/mock.models');
 
