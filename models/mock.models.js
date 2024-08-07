@@ -10,7 +10,8 @@ const MockSchema = mongoose.Schema(
             required:false
         },
         examfile:{
-            file:{type: Buffer, required:true},
+            type: Buffer,
+            required:true
         }
     },
     {
