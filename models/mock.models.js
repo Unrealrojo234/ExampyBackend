@@ -5,12 +5,13 @@ const MockSchema = mongoose.Schema(
             type:String,
             required:[true, "Please enter the name of the school"]
         },
-        year:{
-            type:String,
-            required:false
+        
+        exampdf:{
+            type: String,
+            required:true
         },
-        examfile:{
-            type: Buffer,
+        name:{
+            type: String,
             required:true
         }
     },

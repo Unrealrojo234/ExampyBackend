@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const dataBase = process.env.DATABASE_STRING;
+const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
 app.use(express.json());
 app.use(cors());
