@@ -25,6 +25,23 @@ app.post('/mock',async(req,res)=>{
     }
 })
 
+//Deleting data from database using id
+app.delete('/mock/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const mock = await Mock.findByIdAndDelete(id);
+
+        if (!mock){
+            return res.status(404).json({message:'Mock was not found!'})
+        }
+        res.status(200).json({message:'Mock deleted successfully'})
+
+    }catch(error){
+        console.log('Error',error)
+    }
+});
+
+
 //Getting data from the database
 app.get('/mock', async(req,res)=>{
     try{
