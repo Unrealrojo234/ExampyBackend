@@ -5,14 +5,15 @@ const cors = require('cors');
 require('dotenv').config();
 
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
-app.use(cors());
+
+app.options('*',cors());
 
 app.use(express.json());
 //imorting models
 const Mock = require('./models/mock.models');
 
 //Posting data to the database
-app.post('/mock',async(req,res)=>{
+app.post('/mock',cors(),async(req,res)=>{
     try{
         const mock = await Mock.create(req.body);
         res.status(200).json(mock);
@@ -26,7 +27,7 @@ app.post('/mock',async(req,res)=>{
 })
 
 //Deleting data from database using id
-app.delete('/mock/:id',async(req,res)=>{
+app.delete('/mock/:id',cors(),async(req,res)=>{
     try{
         const {id} = req.params;
         const mock = await Mock.findByIdAndDelete(id);
@@ -43,7 +44,7 @@ app.delete('/mock/:id',async(req,res)=>{
 
 
 //Getting data from the database
-app.get('/mock', async(req,res)=>{
+app.get('/mock',cors(), async(req,res)=>{
     try{
         const mock = await Mock.find({});
         res.status(200).json(mock);
