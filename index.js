@@ -7,10 +7,11 @@ require('dotenv').config();
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
 app.use(express.json());
-app.use(cors());
 //imorting models
 const Mock = require('./models/mock.models');
-app.use(cors());
+app.use(cors({
+    origin:'*'
+}));
 
 //Posting data to the database
 app.post('/mock',async(req,res)=>{
