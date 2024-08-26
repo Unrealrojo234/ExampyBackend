@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 //imorting models
 const Mock = require('./models/mock.models');
+app.use(cors());
 
 //Posting data to the database
 app.post('/mock',async(req,res)=>{
