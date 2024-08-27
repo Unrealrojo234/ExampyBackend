@@ -6,9 +6,13 @@ require('dotenv').config();
 
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
-app.use(cors({
-    origin:'https://exampy-admin-dashboard.vercel.app/mocks'
-}))
+const corsOptions = {
+    origin:'*',//Allows all origins
+    methods:'GET,HEAD,PUT,PATCH,POST,DELETE', //Allowed methods
+    allowedHeaders:'Content-Type, Authorization' //Allowed Headers
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 //imorting models
