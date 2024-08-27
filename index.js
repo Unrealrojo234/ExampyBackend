@@ -6,7 +6,9 @@ require('dotenv').config();
 
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
-app.options('*',cors());
+app.use(cors({
+    origin:'https://exampy-admin-dashboard.vercel.app/'
+}))
 
 app.use(express.json());
 //imorting models
