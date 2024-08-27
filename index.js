@@ -7,7 +7,7 @@ require('dotenv').config();
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
 const corsOptions = {
-    origin:'*',//Allows all origins
+    origin:'https://exampy-admin-dashboard.vercel.app/',//Allows all origins
     methods:'GET,HEAD,PUT,PATCH,POST,DELETE', //Allowed methods
     allowedHeaders:'Content-Type, Authorization' //Allowed Headers
 };
