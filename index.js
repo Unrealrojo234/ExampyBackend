@@ -7,7 +7,7 @@ require('dotenv').config();
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
 app.use(cors({
-    origin:'https://exampy-admin-dashboard.vercel.app/'
+    origin:'https://exampy-backend-blue.vercel.app/mock'
 }))
 
 app.use(express.json());
