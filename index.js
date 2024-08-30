@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const bodyParser = require('body-parser')
 
 const dataBase = process.env.VITE_REACT_API_DATABASE_STRING;
 
@@ -17,6 +18,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 //imorting models
 const Mock = require('./models/mock.models');
+
+
+app.use(bodyParser.json({limit: "25mb"}));
+
 
 //Posting data to the database
 app.post('/mock',cors(),async(req,res)=>{
